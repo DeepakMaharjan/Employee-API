@@ -26,6 +26,8 @@ public class ShowEmployeeActivity extends AppCompatActivity {
         showDetailsList.add(new ShowDetails("3", "Mamata Dangol", "$105.00", "20"));
         showDetailsList.add(new ShowDetails("4", "Saugat Subedi", "$200.00", "19"));
         showDetailsList.add(new ShowDetails("5", "Anish Kumar Thakur", "$80.00", "25"));
+        showDetailsList.add(new ShowDetails("6", "Dipesh Maharjan", "$250.00", "12"));
+
 
         ShowDetailsAdapter showDetailsAdapter = new ShowDetailsAdapter(this, showDetailsList);
         recyclerView.setAdapter(showDetailsAdapter);
