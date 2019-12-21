@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".UpdateDeleteActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update / Delete Employee"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold|italic"/>
+
+    <EditText
+        android:id="@+id/etUDEmpNo"
+        android:hint="Enter employee no"
+        style="@style/edittext"
+        />
+
+    <Button
+        android:id="@+id/btnUDSearchNow"
+        android:text="Search"
+        style="@style/button"/>
+
+
+    <EditText
+        android:id="@+id/etUDName"
+        android:hint="Enter name"
+        style="@style/edittext"
+        />
+
+    <EditText
+        android:id="@+id/etUDSalary"
+        android:hint="Enter salary"
+        android:inputType="number"
+        style="@style/edittext"
+        />
+
+    <EditText
+        android:id="@+id/etUDAge"
+        android:hint="Enter age"
+        android:inputType="number"
+        style="@style/edittext"
+        />
+
+    <Button
+        android:id="@+id/btnUDUpdate"
+        android:text="Update"
+        style="@style/button"/>
+
+</LinearLayout>
