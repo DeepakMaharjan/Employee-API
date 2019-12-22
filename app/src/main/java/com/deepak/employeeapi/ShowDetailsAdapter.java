@@ -1,6 +1,6 @@
 package com.deepak.employeeapi;
 
-import android.content.Context;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.deepak.employeeapi.model.Employee;
+
 import java.util.List;
+
+import retrofit2.Callback;
 
 public class ShowDetailsAdapter extends RecyclerView.Adapter<ShowDetailsAdapter.ShowDetailsHolder>{
 
-    Context mContext;
-    List<ShowDetails> showDetailsList;
+    Callback mContext;
+    List<Employee> employeeList;
 
-    public ShowDetailsAdapter(Context mContext, List<ShowDetails> showDetailsList) {
+    public ShowDetailsAdapter(Callback mContext, List<Employee> employeeList) {
         this.mContext = mContext;
-        this.showDetailsList = showDetailsList;
+        this.employeeList = employeeList;
     }
 
     @NonNull
@@ -28,20 +32,19 @@ public class ShowDetailsAdapter extends RecyclerView.Adapter<ShowDetailsAdapter.
                 .inflate(R.layout.employee_details, parent,false);
         return new ShowDetailsHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull ShowDetailsHolder holder, int position) {
-        ShowDetails showDetails = showDetailsList.get(position);
-        holder.tvShowEId.setText(showDetails.getEmployee_id());
-        holder.tvShowEName.setText(showDetails.getEmployee_name());
-        holder.tvShowESalary.setText(showDetails.getEmployee_salary());
-        holder.tvShowEAge.setText(showDetails.getEmployee_age());
+        Employee employee = employeeList.get(position);
+        holder.tvShowEId.setText(employee.getId());
+        holder.tvShowEName.setText(employee.getEmployee_name());
+        holder.tvShowESalary.setText(employee.getEmployee_salary());
+        holder.tvShowEAge.setText(employee.getEmployee_age());
 
     }
 
     @Override
     public int getItemCount() {
-        return showDetailsList.size();
+        return employeeList.size();
     }
 
     public class ShowDetailsHolder extends RecyclerView.ViewHolder{
