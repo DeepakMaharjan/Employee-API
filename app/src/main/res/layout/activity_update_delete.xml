@@ -55,4 +55,9 @@
         android:text="Update"
         style="@style/button"/>
 
+    <Button
+        android:id="@+id/btnUDDelete"
+        android:text="Delete"
+        style="@style/button"/>
+
 </LinearLayout>

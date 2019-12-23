@@ -3,6 +3,7 @@ package com.deepak.employeeapi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,7 +14,7 @@ public class UpdateDeleteActivity extends AppCompatActivity {
     Button btnUDSearchNow;
 
     EditText etUDName, etUDSalary, etUDAge;
-    Button btnUDUpdate;
+    Button btnUDUpdate,btnUDDelete;
 
 
     @Override
@@ -28,5 +29,13 @@ public class UpdateDeleteActivity extends AppCompatActivity {
         etUDSalary = findViewById(R.id.etUDSalary);
         etUDAge = findViewById(R.id.etUDAge);
         btnUDUpdate = findViewById(R.id.btnUDUpdate);
+        btnUDDelete = findViewById(R.id.btnUDDelete);
+
+        btnUDSearchNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
     }
 }
