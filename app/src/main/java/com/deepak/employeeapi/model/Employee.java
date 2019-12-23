@@ -55,12 +55,13 @@ public class Employee {
         this.profile_image = profile_image;
     }
 
-    //
-    private Employee[] employees;
-
-    public Employee[] getEmployees(){
-        return employees;
-    }
-
 }
+
+//public class EmployeeDetails{
+//    private Employee[] employees;
+//
+//    public Employee[] getEmployees(){
+//        return employees;
+//    }
+//}
 

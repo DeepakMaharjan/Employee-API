@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.deepak.employeeapi.API.EmployeeAPI;
-import com.deepak.employeeapi.JSONresponse.JSONresponse;
 import com.deepak.employeeapi.URL.URL;
 import com.deepak.employeeapi.model.Employee;
 
@@ -28,9 +27,9 @@ public class ShowEmployeeActivity extends AppCompatActivity {
 
     private TextView tvEmployees;
 
-    //private RecyclerView recyclerView;
-    //private ArrayList<Employee> data;
-    //private ShowDetailsAdapter showDetailsAdapter;
+//    private RecyclerView recyclerView;
+//    private ArrayList<Employee> data;
+//    private ShowDetailsAdapter showDetailsAdapter;
 
 
     @Override
@@ -38,7 +37,7 @@ public class ShowEmployeeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_employee);
 
-        //recyclerView = findViewById(R.id.recyclerView);
+//        recyclerView = findViewById(R.id.recyclerView);
 
         tvEmployees = findViewById(R.id.tvEmployees);
 
@@ -49,25 +48,30 @@ public class ShowEmployeeActivity extends AppCompatActivity {
 
         EmployeeAPI employeeAPI = retrofit.create(EmployeeAPI.class);
 
+
         Call<List<Employee>> listCall = employeeAPI.getAllEmployees();
+
+
 
         //Asynchronous Call
         listCall.enqueue(new Callback<List<Employee>>() {
             @Override
             public void onResponse(Call<List<Employee>> call, Response<List<Employee>> response) {
+
                 if (!response.isSuccessful()) {
                     Toast.makeText(ShowEmployeeActivity.this, "Error code " + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                List<Employee> employeeList = response.body();
 
                 //JSONresponse jsonResponse = response.body();
 
-                //data = new ArrayList<>(Arrays.asList(employeeList.getEmployees()));
+               // data = new ArrayList<>(Arrays.asList(employeeList));
                 //showDetailsAdapter = new ShowDetailsAdapter(data);
                 //recyclerView.setAdapter(showDetailsAdapter);
 
+
+                List<Employee> employeeList = response.body();
 
                 for (Employee emp : employeeList) {
 
@@ -82,10 +86,10 @@ public class ShowEmployeeActivity extends AppCompatActivity {
                     //employeeList.add(new Employee(data));
                     tvEmployees.append(data);
 
-
-                    //ShowDetailsAdapter showDetailsAdapter = new ShowDetailsAdapter(this, employeeList);
-                    //recyclerView.setAdapter(showDetailsAdapter);
-                    //recyclerView.setLayoutManager(new LinearLayoutManager(ShowEmployeeActivity.this, LinearLayoutManager.VERTICAL, false));
+//
+//                    ShowDetailsAdapter showDetailsAdapter = new ShowDetailsAdapter(this, employeeList);
+//                    recyclerView.setAdapter(showDetailsAdapter);
+//                    recyclerView.setLayoutManager(new LinearLayoutManager(ShowEmployeeActivity.this, LinearLayoutManager.VERTICAL, false));
                 }
             }
 

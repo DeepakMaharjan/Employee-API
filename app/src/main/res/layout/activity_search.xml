@@ -21,6 +21,7 @@
     <EditText
         android:id="@+id/etSearchId"
         android:hint="Enter id"
+        android:textSize="20sp"
         android:inputType="number"
         style="@style/edittext"
         />

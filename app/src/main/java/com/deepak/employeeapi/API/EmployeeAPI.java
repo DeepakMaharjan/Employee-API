@@ -6,6 +6,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface EmployeeAPI {
 
@@ -13,4 +14,8 @@ public interface EmployeeAPI {
     @GET("employees")
 
     Call<List<Employee>> getAllEmployees();
+
+    //GET data from http://http://dummy.restapiexample.com/api/v1/employee/1
+    @GET("employee/{empID}")
+    Call<Employee> getEmployeeByID(@Path("empID") int empId);
 }
